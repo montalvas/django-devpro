@@ -21,6 +21,17 @@
                     <small class="form-text text-muted">{{ form.name.errors }}</small>
                 </form>
 
+                <h2 class="mt-5">Tarefas Pendentes</h2>
+
+                {% for task in pending_tasks %}
+                <div class="input-group mb-3">
+                    <div class="input-group-text">
+                      <input class="form-check-input mt-0" type="checkbox" value="{{ task.name }}" aria-label="Checkbox for task">
+                    </div>
+                    <input type="text" class="form-control" aria-label="Text input with checkbox" value="{{ task.name }}">
+                </div>
+                {% endfor %}
+
             </div><!--cols-->
         </div><!--row-->
     </div><!--container-->
